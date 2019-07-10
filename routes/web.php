@@ -11,6 +11,8 @@
 |
 */
 Route::get('/','StaticPagesController@home');
+
+// 命名路由 ,可以在模板页面中直接用 {{ route('') }} 使用,从而达到配置化
 Route::get('/home','StaticPagesController@home')->name('home');
 Route::get('/about','StaticPagesController@about')->name('about');
 Route::get('/help','StaticPagesController@help')->name('help');
