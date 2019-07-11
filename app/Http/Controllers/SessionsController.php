@@ -7,6 +7,11 @@ use App\Models\User;
 use Auth;
 
 class SessionsController extends Controller {
+
+    public function __construct(){
+        $this->middleware('auth',['only'=>['destroy']]);
+        $this->middleware('guest',['only'=>['create','store']]);
+    }
     /**
      * 显示登录界面
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
